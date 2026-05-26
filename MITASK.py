@@ -1,4 +1,24 @@
 # ------------------------------------------------
+# ================== MITASK *M* ==================
+# ------------------------------------------------
+def getSquareNumbers(arr):
+    result = []
+
+    for num in arr:
+        obj = {
+            "number": num,
+            "square": num * num
+        }
+
+        result.append(obj)
+
+    return result
+
+
+print(getSquareNumbers([1, 2, 3]))
+
+
+# ------------------------------------------------
 # ================== MITASK *L* ==================
 # ------------------------------------------------
 def reverse_sentence(sentence):
