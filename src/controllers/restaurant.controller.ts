@@ -27,3 +27,5 @@ restaurantController.getSignup = (req: Request, res: Response) => {
         console.log("Error, getSignup:", err);
     }
 };
+
+export default restaurantController
