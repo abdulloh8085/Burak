@@ -2,6 +2,7 @@ import MemberModel from "../schema/Member.model";
 import { Member, MemberInput, LoginInput } from "../libs/types/member";
 import Errors, { HttpCode, Message } from "../libs/Errors";
 import { MemberType } from "../libs/enums/member.enum";
+import * as bcrypt from "bcryptjs";
 
 class MemberService {
     private readonly memberModel;
@@ -31,6 +32,8 @@ class MemberService {
             .exec();
         if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
         const isMatch = input.memberPassword === member.memberPassword;
+        
+            bcrypt.compareSync(input.memberPassword, member.memberPassword); 
 
         if (!isMatch) {
             throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);

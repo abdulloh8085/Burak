@@ -1,18 +1,42 @@
 # ------------------------------------------------
+# ================== MITASK *P* ==================
+# ------------------------------------------------
+def convert_data(details):
+    result = []
+
+    for field, value in details.items():
+        result.append([field, value])
+
+    return result
+
+
+print(
+    convert_data({
+        "product": "Laptop",
+        "price": 1200,
+        "stock": 15,
+        "brand": "Lenovo"
+    })
+)
+
+# ------------------------------------------------
 # ================== MITASK *O* ==================
 # ------------------------------------------------
+
+
 def calculate_total(items):
     result = 0
-    
+
     for item in items:
         item_type = type(item)
-        
+
         if item_type == int:
             result = result + item
         elif item_type == float:
             result = result + item
-            
+
     return result
+
 
 my_list = [14, "15", {"son": 13}, True, 23]
 output = calculate_total(my_list)
