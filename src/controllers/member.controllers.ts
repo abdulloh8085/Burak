@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import { T } from "../libs/types/common";
 import { MemberInput, LoginInput, Member } from "../libs/types/member";
-import { MemberService } from "../models/Member.service";
 import Errors from "../libs/Errors";
+import MemberService from "../models/Member.service";
 
 const memberService = new MemberService();
 
