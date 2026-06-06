@@ -1,4 +1,22 @@
 # ------------------------------------------------
+# ================== MITASK *Q* ==================
+# ------------------------------------------------
+def hasProperty(obj, objKey):
+    if objKey in obj:
+        print(f"object has -> {objKey} <- property")
+        return True
+
+    print(f"object does not have -> {objKey} <- property")
+    return False
+
+
+car = {"name": "BMW", "year": 2004}
+
+print(hasProperty(car, "origin"))
+print(hasProperty(car, "name"))
+
+
+# ------------------------------------------------
 # ================== MITASK *P* ==================
 # ------------------------------------------------
 def convert_data(details):
