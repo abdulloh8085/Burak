@@ -18,6 +18,7 @@ export enum Message {
     NO_MEMBER_NICK = "No member with that Nick!",
     USED_NICK_PHONE = "You are inserting already used Nick or Phone!",
     WRONG_PASSWORD = "You entered wrong password, Please try again!",
+    NOT_AUTHENTICATED = "You are not authenticated, Please login first!"
 }
 
 class Errors extends Error {
@@ -33,6 +34,6 @@ class Errors extends Error {
         this.code = statusCode;
         this.message = statusMessage;
     }
-}
+    }
 
-export default Errors;
+    export default Errors;

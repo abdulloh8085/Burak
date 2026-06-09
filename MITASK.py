@@ -19,46 +19,46 @@ print(hasProperty(car, "name"))
 # ------------------------------------------------
 # ================== MITASK *P* ==================
 # ------------------------------------------------
-def convert_data(details):
-    result = []
+# def convert_data(details):
+#     result = []
 
-    for field, value in details.items():
-        result.append([field, value])
+#     for field, value in details.items():
+#         result.append([field, value])
 
-    return result
+#     return result
 
 
-print(
-    convert_data({
-        "product": "Laptop",
-        "price": 1200,
-        "stock": 15,
-        "brand": "Lenovo"
-    })
-)
+# print(
+#     convert_data({
+#         "product": "Laptop",
+#         "price": 1200,
+#         "stock": 15,
+#         "brand": "Lenovo"
+#     })
+# )
 
 # ------------------------------------------------
 # ================== MITASK *O* ==================
 # ------------------------------------------------
 
 
-def calculate_total(items):
-    result = 0
+# def calculate_total(items):
+#     result = 0
 
-    for item in items:
-        item_type = type(item)
+#     for item in items:
+#         item_type = type(item)
 
-        if item_type == int:
-            result = result + item
-        elif item_type == float:
-            result = result + item
+#         if item_type == int:
+#             result = result + item
+#         elif item_type == float:
+#             result = result + item
 
-    return result
+#     return result
 
 
-my_list = [14, "15", {"son": 13}, True, 23]
-output = calculate_total(my_list)
-print(output)
+# my_list = [14, "15", {"son": 13}, True, 23]
+# output = calculate_total(my_list)
+# print(output)
 # ------------------------------------------------
 # ================== MITASK *N* ==================
 # ------------------------------------------------
