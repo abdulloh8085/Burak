@@ -34,6 +34,5 @@ class Errors extends Error {
         this.code = statusCode;
         this.message = statusMessage;
     }
-    }
-
-    export default Errors;
+}
+export default Errors;
