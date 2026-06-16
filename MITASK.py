@@ -1,33 +1,52 @@
 # ------------------------------------------------
+# ================== MITASK *T* ==================
+# ------------------------------------------------
+def mergeSortedArrays(arr1, arr2):
+    result = []
+
+    for num in arr1:
+        result.append(num)
+
+    for num in arr2:
+        result.append(num)
+
+    result.sort()
+
+    return result
+
+
+print(mergeSortedArrays([0, 3, 4], [4, 6]))
+
+# ------------------------------------------------
 # ================== MITASK *S* ==================
 # ------------------------------------------------
-def missingNumber(arr):
-    missing = None
+# def missingNumber(arr):
+#     missing = None
 
-    for num in range(len(arr) + 1):
-        if num not in arr:
-            missing = num
-            break
+#     for num in range(len(arr) + 1):
+#         if num not in arr:
+#             missing = num
+#             break
 
-    return missing
+#     return missing
 
 
-numbers = [3, 0, 1, 6, 2, 5]
-print(missingNumber(numbers))
+# numbers = [3, 0, 1, 6, 2, 5]
+# print(missingNumber(numbers))
 
 
 # ------------------------------------------------
 # ================== MITASK *R* ==================
 # ------------------------------------------------
 
-def calculate(expression):
-    num1, operator, num2 = expression.split()
+# def calculate(expression):
+#     num1, operator, num2 = expression.split()
 
-    if operator == "+":
-        return int(num1) + int(num2)
+#     if operator == "+":
+#         return int(num1) + int(num2)
 
 
-print(calculate("1 + 3"))  # 4
+# print(calculate("1 + 3"))  # 4
 
 # ------------------------------------------------
 # ================== MITASK *Q* ==================

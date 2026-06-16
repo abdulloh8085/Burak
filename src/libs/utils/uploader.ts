@@ -1,6 +1,5 @@
-
 import path from "path";
-import multer from "multer";
+import multer from "multer"; // bu bizga browser yoki Postman dan user tomondan kelgan File yoki rasm ni qabul qilib ochib beradi.
 import { v4 } from "uuid";
 
 function getTargetImageStorage(address: any) {
@@ -10,7 +9,7 @@ function getTargetImageStorage(address: any) {
         },
         filename: function (req, file, cb) {
             const extension = path.parse(file.originalname).ext;
-            const random_name = v4() + extension;
+            const random_name = v4() + extension; // agar bu yerda extension bo'lmasa
             cb(null, random_name);
         },
     });
