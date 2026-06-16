@@ -1,4 +1,3 @@
-
 import { ObjectId } from "mongoose";
 import {
     ProductCollection,
@@ -27,6 +26,20 @@ export interface ProductInput {
     productName: string;
     productPrice: number;
     productLeftCount: number;
+    productSize?: ProductSize;
+    productVolume?: number;
+    productDecs?: string;
+    productImages?: string[];
+    productViews?: number;
+}
+
+export interface ProductUpdateInput {
+    _id: ObjectId;
+    productStatus?: ProductStatus;
+    productCollection?: ProductCollection;
+    productName?: string;
+    productPrice?: number;
+    productLeftCount?: number;
     productSize?: ProductSize;
     productVolume?: number;
     productDecs?: string;
