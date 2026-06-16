@@ -8,17 +8,15 @@ import { AdminRequest } from "../libs/types/member";
 const productService = new ProductService();
 
 /** SPA */
-
-
-
-
 //** SSR */
 
 const productController: T = {}
 productController.getAllProducts = async (req: Request, res: Response) => {
     try {
         console.log("getAllProducts")
-        res.render("products")
+        const data = await productService.getAllProducts();
+
+        res.render("products", { products: data })
     } catch (err) {
         console.log("Error, signup:", err);
         if (err instanceof Errors) res.status(err.code).json(err);
@@ -33,15 +31,10 @@ productController.createNewProduct = async (req: AdminRequest, res: Response) =>
         if (!req.files?.length)
             throw new Errors(HttpCode.INTERNAL_SERVER_ERROR, Message.CREATE_FAILED);
 
-
         const data: ProductInput = req.body;
         data.productImages = req.files?.map(ele => {
             return ele.path;
         });
-
-
-
-
 
         await productService.createNewProduct(data);
 
@@ -71,5 +64,6 @@ productController.updateChosenProduct = async (req: Request, res: Response) => {
         else res.status(Errors.standard.code).json(Errors.standard);
     }
 };
+
 
 export default productController;
