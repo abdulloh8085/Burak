@@ -8,6 +8,7 @@ import { AdminRequest } from "../libs/types/member";
 const productService = new ProductService();
 
 /** SPA */
+
 //** SSR */
 
 const productController: T = {}
