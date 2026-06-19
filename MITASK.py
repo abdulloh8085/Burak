@@ -1,21 +1,37 @@
 # ------------------------------------------------
-# ================== MITASK *T* ==================
+# ================== MITASK *V* ==================
 # ------------------------------------------------
-def mergeSortedArrays(arr1, arr2):
-    result = []
+# ------------------------------------------------
+def countChars(text):
+    result = {}
 
-    for num in arr1:
-        result.append(num)
+    for letter in text:
 
-    for num in arr2:
-        result.append(num)
-
-    result.sort()
+        if letter not in result:
+            result[letter] = 1
+        else:
+            result[letter] += 1
 
     return result
 
 
-print(mergeSortedArrays([0, 3, 4], [4, 6]))
+# ================== MITASK *T* ==================
+# ------------------------------------------------
+# def mergeSortedArrays(arr1, arr2):
+#     result = []
+
+#     for num in arr1:
+#         result.append(num)
+
+#     for num in arr2:
+#         result.append(num)
+
+#     result.sort()
+
+#     return result
+
+
+# print(mergeSortedArrays([0, 3, 4], [4, 6]))
 
 # ------------------------------------------------
 # ================== MITASK *S* ==================
