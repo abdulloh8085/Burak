@@ -1,18 +1,38 @@
 # ------------------------------------------------
+# ================== MITASK *W* ==================
+# ------------------------------------------------
+# ------------------------------------------------
+def chunkArray(arr, size):
+    result = []
+    temp = []
+
+    for num in arr:
+        temp.append(num)
+
+        if len(temp) == size:
+            result.append(temp)
+            temp = []
+
+    if len(temp) != 0:
+        result.append(temp)
+
+    return result
+
+# ------------------------------------------------
 # ================== MITASK *V* ==================
 # ------------------------------------------------
 # ------------------------------------------------
-def countChars(text):
-    result = {}
+# def countChars(text):
+#     result = {}
 
-    for letter in text:
+#     for letter in text:
 
-        if letter not in result:
-            result[letter] = 1
-        else:
-            result[letter] += 1
+#         if letter not in result:
+#             result[letter] = 1
+#         else:
+#             result[letter] += 1
 
-    return result
+#     return result
 
 
 # ================== MITASK *T* ==================
