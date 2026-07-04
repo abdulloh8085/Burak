@@ -28,24 +28,16 @@ class MemberService {
         }
     }
     public async login(input: LoginInput): Promise<Member> {
-        //TODO: Consider member status later
+
         const member = await this.memberModel
             .findOne(
-                { memberNick: input.memberNick, 
-
-                 memberStatus: { $ne: MemberStatus.DELETE}, 
-                },
-                {memberNick: 1, memberPassword: 1, 
-                memberStatus: 1
-                },
+                { memberNick: input.memberNick, memberStatus: { $ne: MemberStatus.DELETE } },
+                { memberNick: 1, memberPassword: 1, memberStatus: 1 }
             )
             .exec();
-        if (!member) 
-            throw new Errors
-        (HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
-
+        if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
         else if (member.memberStatus === MemberStatus.BLOCK) {
-            throw new Errors(HttpCode.FORBIDDEN, Message.BLOCKED_USER);
+            throw new Errors(HttpCode.FORBIDDEN, Message.BLOCKED_USER)
         }
 
         const isMatch = await bcrypt.compare(
@@ -64,8 +56,7 @@ class MemberService {
     /** SSR */
     public async processSignup(input: MemberInput): Promise<Member> {
         const exist = await this.memberModel
-            .findOne({ memberType:
-            MemberType.RESTAURANT })
+            .findOne({ memberType: MemberType.RESTAURANT })
             .exec();
         if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
 
