@@ -28,7 +28,6 @@ class MemberService {
         }
     }
     public async login(input: LoginInput): Promise<Member> {
-
         const member = await this.memberModel
             .findOne(
                 { memberNick: input.memberNick, memberStatus: { $ne: MemberStatus.DELETE } },
@@ -51,7 +50,8 @@ class MemberService {
 
         return await this.memberModel.findById(member._id).lean().exec();
     }
-        public async getMemberDetail(member: Member): Promise<Member> {
+
+    public async getMemberDetail(member: Member): Promise<Member> {
         const memberId = shapeIntoMongooseObkectId(member._id);
         const result = await this.memberModel
             .findOne({ _id: memberId, memberStatus: MemberStatus.ACTIVE })
@@ -60,6 +60,7 @@ class MemberService {
         if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
         return result;
     }
+
 
     /** SSR */
     public async processSignup(input: MemberInput): Promise<Member> {

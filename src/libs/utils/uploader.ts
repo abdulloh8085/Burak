@@ -1,5 +1,5 @@
 import path from "path";
-import multer from "multer"; // bu bizga browser yoki Postman dan user tomondan kelgan File yoki rasm ni qabul qilib ochib beradi.
+import multer from "multer";
 import { v4 } from "uuid";
 
 function getTargetImageStorage(address: any) {
@@ -9,7 +9,7 @@ function getTargetImageStorage(address: any) {
         },
         filename: function (req, file, cb) {
             const extension = path.parse(file.originalname).ext;
-            const random_name = v4() + extension; // agar bu yerda extension bo'lmasa
+            const random_name = v4() + extension;
             cb(null, random_name);
         },
     });
@@ -21,3 +21,16 @@ const makeUploader = (address: string) => {
 };
 
 export default makeUploader;
+// const product_storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         cb(null, './uploads/products');
+//     },
+//     filename: function (req, file, cb) {
+//         console.log(file);
+//         const extension = path.parse(file.originalname).ext;
+//         const random_name = v4() + extension;
+//         cb(null, random_name);
+//     }
+// });
+
+// export const uploadProductImage = multer({ storage: product_storage })

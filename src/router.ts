@@ -1,5 +1,5 @@
 import express from "express";
-import memberController from "./controllers/member.controllers";
+import memberController from "./controllers/member.controller";
 const router = express.Router();
 
 /* Member */
@@ -13,6 +13,13 @@ router.post(
 router.get(
     "/member/detail",
     memberController.verifyAuth,
-    memberController.getMemberDeteil
-    )
+    memberController.getMemberDetail
+);
 
+/* Product */
+
+
+
+/* Order */
+
+export default router;

@@ -1,4 +1,4 @@
-console.log("Signup frontend javascript file is running");
+console.log("Signup frontend javascript file");
 
 $(function () {
     const fileTarget = $(".file-box .upload-hidden");
@@ -7,13 +7,12 @@ $(function () {
     fileTarget.on("change", function () {
         if (window.FileReader) {
             const uploadFile = $(this)[0].files[0],
-            fileType = uploadFile["type"],
-            validImageType = ["image/jpg", "image/jpeg", "image/png"];
+                fileType = uploadFile["type"],
+                validImageType = ["image/jpg", "image/jpeg", "image/png"];
             if (!validImageType.includes(fileType)) {
                 alert("Please insert only jpeg, jpg and png!");
             } else {
                 if (uploadFile) {
-                    console.log(URL.createObjectURL(uploadFile));
                     $(".upload-img-frame")
                         .attr("src", URL.createObjectURL(uploadFile))
                         .addClass("success");
@@ -27,9 +26,9 @@ $(function () {
 
 function validateSignupForm() {
     const memberNick = $(".member-nick").val(),
-     memberPhone = $(".member-phone").val(),
-     memberPassword = $(".member-password").val(),
-     confirmPassword = $(".confirm-password").val();
+        memberPhone = $(".member-phone").val(),
+        memberPassword = $(".member-password").val(),
+        confirmPassword = $(".confirm-password").val();
 
     if (
         memberNick === "" ||

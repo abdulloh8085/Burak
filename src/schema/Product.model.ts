@@ -1,4 +1,3 @@
-
 import mongoose, { Schema } from "mongoose";
 import {
     ProductCollection,
@@ -47,7 +46,6 @@ const productSchema = new Schema(
         },
         productDesc: {
             type: String,
-            required: true,
         },
         productImages: {
             type: [String],
