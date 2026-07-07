@@ -146,4 +146,9 @@ memberController.retrieveAuth = async (req: ExtendedRequest, res: Response, next
 
 }
 
+
+
+
+
+
 export default memberController;
