@@ -97,8 +97,6 @@ memberController.verifyAuth = async (req: ExtendedRequest, res: Response, next: 
             throw new Errors(HttpCode.UNAUTHORIZED, Message.NOT_AUTHENTICATED);
 
         next();
-
-
     } catch (err) {
         console.log("Error, verifyAuth:", err);
         if (err instanceof Errors) res.status(err.code).json(err);

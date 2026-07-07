@@ -134,5 +134,4 @@ class MemberService {
         return result;
     }
 }
-
 export default MemberService;
