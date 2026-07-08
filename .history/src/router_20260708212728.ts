@@ -30,8 +30,7 @@ router.post("/member/update",
 router.get("/member/top-users", memberController.getTopUsers)
 
 /* Product */
-router.get(
-    "/product/all", 
+router.get("/product/all", 
     productController.getProducts
 );
 

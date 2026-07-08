@@ -26,3 +26,5 @@ export enum ProductCollection {
     DRINK = "DRINK",
     OTHER = "OTHER",
 }
+
+export default ProductCollection;

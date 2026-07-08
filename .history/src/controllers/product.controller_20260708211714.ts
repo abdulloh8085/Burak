@@ -4,11 +4,9 @@ import { T } from "../libs/types/common";
 import ProductService from "../models/Product.service";
 import { ProductInput, ProductInquiry } from "../libs/types/product";
 import { AdminRequest } from "../libs/types/member";
-import { ProductCollection } from "../libs/enums/product.enum";
+import { ProductCollection }  "../libs/enums/product.enum";
 
 const productService = new ProductService();
-
-const productController: T = {}
 
 /** SPA */
 productController.getProducts = async (req:Request, res: Response) => {
@@ -37,6 +35,7 @@ productController.getProducts = async (req:Request, res: Response) => {
 
 //** SSR */
 
+const productController: T = {}
 productController.getAllProducts = async (req: Request, res: Response) => {
     try {
         console.log("getAllProducts")
