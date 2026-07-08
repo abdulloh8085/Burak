@@ -3,7 +3,7 @@ import { Member, MemberInput, LoginInput, MemberUpdateInput } from "../libs/type
 import Errors, { HttpCode, Message } from "../libs/Errors";
 import { MemberStatus, MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs";
-import { shapeIntoMongooseObkectId } from "../libs/config";
+import { shapeIntoMongooseObjectId } from "../libs/config";
 
 class MemberService {
     private readonly memberModel;
@@ -52,7 +52,7 @@ class MemberService {
     }
 
     public async getMemberDetail(member: Member): Promise<Member> {
-        const memberId = shapeIntoMongooseObkectId(member._id);
+        const memberId = shapeIntoMongooseObjectId(member._id);
         const result = await this.memberModel
             .findOne({ _id: memberId, memberStatus: MemberStatus.ACTIVE })
             .exec();
@@ -110,7 +110,7 @@ class MemberService {
     }
 
     public async updateChosenUser(input: MemberUpdateInput): Promise<Member[]> {
-        const memberId = shapeIntoMongooseObkectId(input._id)
+        const memberId = shapeIntoMongooseObjectId(input._id)
         const result = await this.memberModel
             .findByIdAndUpdate({ _id: input._id }, input, { new: true })
             .exec();
