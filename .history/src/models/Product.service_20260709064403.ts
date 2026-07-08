@@ -7,15 +7,13 @@ import { T } from "../libs/types/common";
 import { ObjectId } from "mongoose";
 import ViewService from "./View.service";
 import { ViewGroup } from "../libs/enums/view.enum";
-import { ViewInput } from "../libs/types/view"; 
+import { ViewInput } from "../libs/types/views"; 
 
 class ProductService {
     private readonly productModel;
-    public viewService;
 
     constructor() {
-        this.productModel = ProductModel;
-        this.viewService = new ViewService();
+        this.productModel = ProductModel
     }
 
 
@@ -61,35 +59,6 @@ public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
 
       // TODO: if authenticated user => first => view log creation
 
-      if(memberId) {
-            // Check View Log Existence
-            const input: ViewInput = {
-                memberId: memberId,
-                viewRefId: productId,
-                viewGroup: ViewGroup.PRODUCT,
-            };
-            const existView = await this.viewService.checkViewExistence(input);
-            
-            
-        console.log("exist:", !!existView);
-        if(!existView) {
-            // Insert New View Log
-            console.log("PLANNING TO INSERT NEW VIEW");
-            await this.viewService.insertMemberView(input);
-
-
-            // Increase Target View counts
-            const result2 = await this.productModel
-            .findByIdAndUpdate(
-                productId, 
-                {$inc: {productViews: +1}}, 
-                {new: true})
-                .exec();
-            };
-
-            
-
-        }
       // TODO :
 
       // TODO: 
