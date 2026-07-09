@@ -3,7 +3,7 @@ import Errors, { HttpCode, Message } from "../libs/Errors";
 import { View, ViewInput } from "../libs/types/view"; 
 
 class ViewService {
-    private readonly viewModel
+    private readonly viewModel;c
 
     constructor() {
         this.viewModel = ViewModel;

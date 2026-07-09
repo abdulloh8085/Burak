@@ -71,7 +71,7 @@ public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
             const existView = await this.viewService.checkViewExistence(input);
             
             
-        // console.log("exist:", !existView);
+        console.log("exist:", !existView);
         if(!existView) {
             // Insert New View Log
             console.log("PLANNING TO INSERT NEW VIEW");
