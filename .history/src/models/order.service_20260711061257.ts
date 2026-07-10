@@ -119,7 +119,7 @@ class OrderService {
             .exec();
 
         if (!result)
-            throw new Errors(HttpCode.NOT_MODIFIED, Message.NO_DATA_FOUND);
+            throw new Errors(HttpCode.NOT_MODFIED, Message.NOT_DATA_FOUND);
 
         if (orderStatus === OrderStatus.PROCESS) {
             await this.memberService.addUserPoint(member, 1)

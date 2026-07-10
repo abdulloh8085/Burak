@@ -12,12 +12,10 @@ import MemberModel from "../schema/Member.model";
 class OrderService {
     private readonly orderModel;
     private readonly orderItemModel;
-    private readonly memberService;
 
     constructor() {
         this.orderModel = OrderModel;
         this.orderItemModel = OrderItemModel;
-        this.memberService = new MemberService()
     }
 
     public async createOrder(
@@ -101,30 +99,6 @@ class OrderService {
 
 
         return result
-    }
-    public async updateOrders(
-        member: Member,
-        input: OrderUpdateInput,
-    ): Promise<Order> {
-        const memberId = shapeIntoMongooseObjectId(member._id),
-            orderId = shapeIntoMongooseObjectId(input.orderId),
-            orderStatus = input.orderStatus;
-
-        const result = await this.orderModel
-            .findOneAndUpdate(
-                { memberId: memberId, _id: orderId },
-                { orderStatus: orderStatus },
-                { new: true }
-            )
-            .exec();
-
-        if (!result)
-            throw new Errors(HttpCode.NOT_MODIFIED, Message.NO_DATA_FOUND);
-
-        if (orderStatus === OrderStatus.PROCESS) {
-            await this.memberService.addUserPoint(member, 1)
-        }
-        return result;
     }
 }
 

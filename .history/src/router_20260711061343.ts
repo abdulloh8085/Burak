@@ -73,5 +73,4 @@ router.post(
     memberController.verifyAuth,
     orderController.updateOrders
 );
-
 export default router;
