@@ -165,17 +165,6 @@ VPS Linux Ubuntu NGINX Firewall UFW Docker Docker-Compose Grafana
 TOOLS:
 Postman Yarn nvm npm SSH SFTP Git GitHub
 DBeaver Compass Apollo Playground
-===========================================================
-FRONTEND:
-TypeScript ReactJS NextJS EJS Bootstrap MaterialUI
-Redux Apollo GraphQL Axios JQuery
-SweetAlert AnimeJs FiberJs ThreeJs
-Socket.Io-Client React-Router-Dom Swiper
-BACKEND:
-NodeJS GraphQL Express NESTJS MongoDB Mongoose
-Session & Token Authentication Bcryptjs Multer
-Socket.Io Cookie-Parser JWT DotEnv Form-Data
-Patterns: MVC Middleware Dependency Injection
-Monorepo project: API & BATCH & CRAWLING
+
 
 */

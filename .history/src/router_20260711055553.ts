@@ -6,17 +6,11 @@ import productController from "./controllers/product.controller";
 import orderController from "./controllers/order.controller";
 
 /* Member */
-router.get(
-    "/member/restaurant", 
-    memberController.getRestaurant
-);
-
+router.get("/member/restaurant", memberController.getRestaurant)
 router.post(
-    "/member/login", 
-    memberController.login
+    "/member/login", memberController.login
 
 );
-
 router.post(
     "/member/signup", 
     memberController.signup
@@ -44,6 +38,7 @@ router.get(
     "/member/top-users",
     memberController.getTopUsers
 );
+
 /* Product */
 router.get(
     "/product/all", 
@@ -55,6 +50,7 @@ router.get(
   memberController.retrieveAuth,
   productController.getProduct
 );
+
 /* Order */
 router.post(
     "/order/create/",

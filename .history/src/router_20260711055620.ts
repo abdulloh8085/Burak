@@ -55,6 +55,7 @@ router.get(
   memberController.retrieveAuth,
   productController.getProduct
 );
+
 /* Order */
 router.post(
     "/order/create/",

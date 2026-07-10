@@ -44,6 +44,7 @@ router.get(
     "/member/top-users",
     memberController.getTopUsers
 );
+
 /* Product */
 router.get(
     "/product/all", 
@@ -55,6 +56,7 @@ router.get(
   memberController.retrieveAuth,
   productController.getProduct
 );
+
 /* Order */
 router.post(
     "/order/create/",
