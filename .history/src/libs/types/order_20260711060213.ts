@@ -35,4 +35,3 @@ export interface OrderInquiry {
     limit: number;
     page: number;
     orderStatus: OrderStatus;
-}

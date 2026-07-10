@@ -23,25 +23,6 @@ orderController.createOrder = async (req: ExtendedRequest, res: Response) => {
         else res.status(Errors.standard.code).json(Errors.standard)
     }
 }
-orderController.getMyOrders = async (req: ExtendedRequest, res: Response) => {
-    try {
-        console.log("getMyOrders");
-        const { limit, page, orderStatus } = req.query;
-        const inquiry: OrderInquiry = {
-            page: Number(page),
-            limit: Number(limit),
-            orderStatus: orderStatus as OrderStatus,
-        }
 
-        console.log("inquiry =>:", inquiry);
-        const result = await orderService.getMyOrders(req.member, inquiry)
-
-        res.status(HttpCode.CREATED).json(result);
-    } catch (err) {
-        console.log("ERROR, model: getMyOrders", err);
-        if (err instanceof Errors) res.status(err.code).json(err)
-        else res.status(Errors.standard.code).json(Errors.standard)
-    }
-}
 
 export default orderController;

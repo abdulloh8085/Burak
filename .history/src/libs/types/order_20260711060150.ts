@@ -30,9 +30,3 @@ export interface OrderItemInput {
     productId: ObjectId;
     orderId?: ObjectId;
 }
-
-export interface OrderInquiry {
-    limit: number;
-    page: number;
-    orderStatus: OrderStatus;
-}

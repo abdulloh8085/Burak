@@ -19,9 +19,7 @@ export interface Order {
     memberId: ObjectId;
     createdAt: Date;
     updatedAt: Date;
-    //Aggregeytdan 
-    orderItems: OrderItem[];
-    productData: Product[];
+    
 }
 
 export interface OrderItemInput {
@@ -29,10 +27,4 @@ export interface OrderItemInput {
     itemPrice: number;
     productId: ObjectId;
     orderId?: ObjectId;
-}
-
-export interface OrderInquiry {
-    limit: number;
-    page: number;
-    orderStatus: OrderStatus;
 }
