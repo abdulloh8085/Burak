@@ -13,7 +13,7 @@ class OrderService {
     private readonly orderModel;
     private readonly orderItemModel;
     private readonly memberService;
-
+//TODO: mana shulari nima ekanligini ko'rib chiqish <==
     constructor() {
         this.orderModel = OrderModel;
         this.orderItemModel = OrderItemModel;

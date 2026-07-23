@@ -5,6 +5,7 @@ import routerAdmin from "./router-admin";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import { MORGAN_FORMAT } from './libs/config';
+import cors from "cors";
 
 
 import session from 'express-session';
@@ -21,9 +22,11 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/uploads", express.static("./uploads"));
 app.use(express.json());
+app.use(cors({ credentials: true, origin: true }));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan(MORGAN_FORMAT))
+
 
 /** 2-SESSIONS **/
 app.use(
